@@ -1,3 +1,7 @@
+//The way quicksort works, is by choosing a ​pivot​ (an element in the array, often random),
+// and check whether values in the array are higher or lower than that pivot.
+// The values lower than the pivot should be on the​ ​left side, and the values higher than the pivot should be on the right side!
+
 function quickSort(list) {
   if (list.length <= 1) {
     return list;
