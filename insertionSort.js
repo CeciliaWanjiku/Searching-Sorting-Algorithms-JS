@@ -2,16 +2,16 @@
 //​The current element stays the current element after swapping​, until the element is in the right position!
 
 function insertionSort(list) {
-  for (let i = 0; i < list.length; i++) {
+  for (let i = 1; i < list.length; i++) {
     let currentElement = list[i];
-    let j = i - 1;
-    const previousElement = list[j];
+    let j = i;
 
-    while (j >= 0 && previousElement > currentElement) {
-      list[j + 1] = previousElement;
+    while (j > 0 && list[j - 1] > currentElement) {
+      list[j] = list[j - 1];
       j--;
     }
-    list[j + 1] = currentElement;
+
+    list[j] = currentElement;
   }
   return list;
 }

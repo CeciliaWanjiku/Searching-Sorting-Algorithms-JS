@@ -12,17 +12,12 @@ binarySearch = (array, value) => {
       min = mid + 1;
     }
     mid = Math.floor((min + max) / 2);
-    // console.log(mid)
-    // console.log(array[mid])
   }
   if (array[mid] === value) {
     return array[mid];
   } else {
     return "Not found";
   }
-  // return (
-  //     (array[mid] === value) ? mid : "Not found"
-  // )
 };
 
 console.log(binarySearch(array, 20));

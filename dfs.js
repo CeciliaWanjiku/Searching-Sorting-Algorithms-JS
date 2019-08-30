@@ -49,3 +49,60 @@ class Graph {
     }
   }
 }
+
+// method 2
+
+class Node {
+  constructor(value) {
+    this.left = null;
+    this.right = null;
+    this.value = value
+  }
+  addNode(value) {
+    //check if the current node has a value;
+    if(this.value === null) {
+      this.value = value;
+    }
+​
+    else if(value <= this.value) {
+      if (this.left === null) {
+        //insert here
+        this.left = new Node(value)
+      } else {
+        //recursive call
+        this.left.addNode(value)
+      }
+    }
+    else if(value >= this.value) {
+      if (this.right === null){
+        //insert here
+        this.right = new Node(value)
+      } else {
+        //recursive call
+        this.right.addNode(value)
+      }
+    }
+  };
+​
+  printTree() {
+    if (this.left) {
+      this.left.printTree();
+    }
+​
+    if (this.right) {
+      this.right.printTree();
+    }
+​
+    console.log(this.value);
+​
+    return
+  }
+}
+​
+const tree = new Node(4);
+tree.addNode(5);
+tree.addNode(10);
+tree.addNode(2);
+tree.addNode(18);
+​
+tree.printTree();
